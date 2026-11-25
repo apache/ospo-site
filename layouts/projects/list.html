@@ -1,0 +1,56 @@
+{{ define "main" }}
+{{- $d := hugo.Data.ospo -}}
+{{- partial "page-hero.html" . -}}
+
+<section class="section" id="bringing-a-project">
+  <div class="container">
+    <p class="eyebrow">Helping new projects come to the ASF</p>
+    <h2 class="section-title">Bringing a project to The ASF</h2>
+    <p class="section-lead">The VP OSPO is a visible entry point for organizations and communities considering bringing a project to the Foundation—explaining what the ASF offers and expects, and helping assess whether the ASF is the right home.</p>
+
+    <ol class="steps">
+      {{- range $d.new_project_steps }}
+      <li class="step">
+        <span class="step__num">{{ .step }}</span>
+        <h3 class="step__title">{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </li>
+      {{- end }}
+    </ol>
+
+    <div class="notice notice--important">
+      <h3 class="notice__title">Acceptance remains with the Board</h3>
+      <p>The decision to accept a project remains entirely with the Board. The VP OSPO facilitates and recommends, but does not decide or vote on acceptance by virtue of the role.</p>
+      <a href="https://incubator.apache.org/" target="_blank" rel="noopener noreferrer" class="text-link">Visit the Apache Incubator <span aria-hidden="true">&nearr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="expanding-ecosystems">
+  <div class="container">
+    <p class="eyebrow">Helping Apache projects expand their ecosystems</p>
+    <h2 class="section-title">Opt-in ecosystem support for PMCs</h2>
+    <p class="section-lead">PMCs own the technical direction and community decisions of their projects. Support from the OSPO is offered on request or with the PMC's agreement—never imposed.</p>
+    <div class="card-grid card-grid--3">
+      {{- range $d.pmc_ecosystem_items }}
+      <article class="card">
+        <h3 class="card__title">{{ .title }}</h3>
+        <p class="card__text">{{ .description }}</p>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--cta">
+  <div class="container cta">
+    <div>
+      <h2 class="cta__title">Are you a PMC looking for new contributors or adopters?</h2>
+      <p class="cta__text">Reach out to the OSPO on {{ .Site.Params.discussList }} or via {{ .Site.Params.contactEmail }}. Introductions happen only with your agreement.</p>
+    </div>
+    <div class="cta__actions">
+      <a href="{{ "contact/" | relURL }}" class="btn btn--light">Contact the OSPO</a>
+    </div>
+  </div>
+</section>
+{{ end }}

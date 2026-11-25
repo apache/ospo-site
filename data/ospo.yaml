@@ -1,0 +1,450 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements. See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+#
+# Structured content derived from:
+# "VP OSPO at The Apache Software Foundation — Role and Mission"
+
+mission: >
+  Make it easy for the world to engage with the Apache Software Foundation, and
+  help Apache projects and communities thrive through those relationships, in a
+  way that is consistent with the Apache Way and the Foundation's vendor neutrality.
+
+summary:
+  lead: >
+    The Vice President, Open Source Program Office (VP OSPO) is the ASF officer
+    responsible for being the Foundation's primary point of contact with
+    organizations outside the ASF that consume, contribute to, fund, regulate,
+    or collaborate with Apache projects. This includes software vendors and
+    companies (typically via their OSPOs), public sector OSPOs, and other open
+    source foundations.
+  connector: >
+    The VP OSPO acts as a connector: routing external interest to the right
+    people inside the Foundation, helping prospective projects find their way
+    to the ASF, and helping existing Apache projects grow healthy, diverse
+    ecosystems. The role is a facilitator and liaison. It does not take
+    technical, governance, or acceptance decisions away from the bodies that
+    already own them.
+
+contact_email: contact@ospo.apache.org
+discuss_list: discuss@ospo.apache.org
+
+rationale_drivers:
+  - title: Companies & Contributors
+    description: >
+      Companies want to contribute to projects, donate code, or understand how
+      to participate under the Apache Way.
+    accent: purple
+  - title: Corporate OSPOs
+    description: >
+      Corporate OSPOs want a clear counterpart to discuss contribution
+      policies, security, and long-term sustainability.
+    accent: crimson
+  - title: Public Sector Organizations
+    description: >
+      Public sector organizations are adopting open source at scale and
+      increasingly engage on regulation, procurement, digital sovereignty, and
+      software supply-chain security.
+    accent: orange
+  - title: Peer Open Source Foundations
+    description: >
+      Other open source foundations collaborate with the ASF on shared
+      standards, cross-project integrations, policy positions, and joint
+      initiatives.
+    accent: amber
+
+audiences:
+  - id: vendors-companies
+    eyebrow: Corporate & Commercial
+    title: Vendors & Companies
+    tagline: First point of contact for organizations engaging with The ASF or Apache projects.
+    href: /engage/#vendors-companies
+    accent: purple
+    bullets:
+      - Serve as the first point of contact for companies that want to engage with the ASF or with specific Apache projects.
+      - "Explain how to participate effectively: contributing as individuals, merit-based governance, licensing and CLAs/CCLAs, trademark usage, and the separation between employers and project roles."
+      - Connect companies with the appropriate PMCs and officers (Brand Management, Legal Affairs, Fundraising, Security, etc.), rather than acting on their behalf.
+      - Engage with corporate OSPOs on topics such as contribution policies, sustainability, and upstream-first practices.
+
+  - id: public-sector
+    eyebrow: Government & Policy
+    title: Public Sector
+    tagline: Liaison to governments, public administrations, regulators, and public research institutions.
+    href: /engage/#public-sector
+    accent: crimson
+    bullets:
+      - Act as the ASF's liaison to governments, public administrations, regulators, and public research institutions.
+      - Help public sector organizations understand how they can use, contribute to, and support Apache projects.
+      - Coordinate, together with the relevant officers (Public Affairs, Legal Affairs, Security, Privacy, the President and the Board), the ASF's engagement on public policy topics affecting open source, such as cybersecurity regulation, procurement, and digital sovereignty initiatives.
+      - Make sure the ASF speaks with one consistent voice in these discussions.
+
+  - id: peer-foundations
+    eyebrow: Cross-Foundation
+    title: Peer Foundations & Communities
+    tagline: Working relationships across the broader open source ecosystem.
+    href: /engage/#peer-foundations
+    accent: orange
+    bullets:
+      - Maintain working relationships with peer foundations and open source organizations.
+      - "Identify opportunities for collaboration: shared tooling, interoperability between projects, joint events, common positions on policy, and shared best practices."
+      - Help resolve questions where projects span or depend on multiple foundations.
+
+  - id: projects-ecosystems
+    eyebrow: Onboarding & Growth
+    title: Prospective Projects & Apache PMCs
+    tagline: Guiding incoming communities to the ASF and helping existing PMCs grow diverse ecosystems.
+    href: /projects/
+    accent: amber
+    bullets:
+      - Be a visible entry point for organizations and communities considering bringing a project to the ASF.
+      - Connect prospective projects with the Apache Incubator PMC, relevant existing PMCs, and onboarding teams (Legal, Brand, Infrastructure, Security).
+      - Help PMCs that ask for it to find new contributors, adopters, and collaborators across companies, public institutions, and research organizations.
+      - Encourage diversity of contributors and employers within project communities to strengthen project resilience.
+
+principles:
+  - number: "01"
+    title: Vendor neutrality
+    description: >
+      The VP OSPO represents the Foundation, not any employer, vendor, or
+      customer. All organizations are treated equally regardless of size,
+      sponsorship level, or commercial relationship with any officer.
+  - number: "02"
+    title: PMC autonomy
+    description: >
+      PMCs own the technical direction and community decisions of their
+      projects. The VP OSPO can make introductions and share information, but
+      never commits a project to anything or speaks on its behalf without the
+      PMC's agreement.
+  - number: "03"
+    title: Facilitate, don't duplicate
+    description: >
+      Existing officers and committees keep their responsibilities: Legal
+      Affairs for legal questions, Brand Management for trademarks, Fundraising
+      for sponsorship, Security for vulnerability handling, Marketing &
+      Publicity for press. The VP OSPO routes and coordinates.
+  - number: "04"
+    title: Openness
+    description: >
+      Consistent with the Apache Way, discussions are held on public mailing
+      lists whenever possible. Private channels are used only when
+      confidentiality is genuinely required (for example, early-stage
+      discussions with an organization or sensitive policy matters), and
+      outcomes are shared publicly once appropriate.
+  - number: "05"
+    title: Conflict of interest
+    description: >
+      The VP OSPO discloses any affiliation that could create a conflict of
+      interest and recuses from discussions where appropriate.
+
+what_role_is_not:
+  - title: Not a sales or business-development function
+    description: >
+      Not a sales or business-development function on behalf of any company.
+  - title: Not preferential access
+    description: >
+      Not a channel for preferential access to projects, roadmaps, or
+      decision-makers.
+  - title: Not a decision-making authority
+    description: >
+      Not a decision-making authority over project acceptance, project
+      governance, or technical choices.
+  - title: Not a replacement for Fundraising
+    description: >
+      Not a replacement for Fundraising: sponsorship conversations are handed
+      over to VP Fundraising.
+
+relationships:
+  - counterpart: Board of Directors
+    category: Governance
+    nature: Receives regular reports; consulted on strategic or policy engagements
+    url: https://www.apache.org/foundation/board/
+  - counterpart: President
+    category: Governance
+    nature: The VP OSPO reports to the President as an operational officer
+    url: https://www.apache.org/foundation/leadership
+  - counterpart: Apache Incubator PMC
+    category: Projects
+    nature: Main partner for prospective projects
+    url: https://incubator.apache.org/
+  - counterpart: PMCs
+    category: Projects
+    nature: Partners for ecosystem expansion; engaged on request or with their agreement
+    url: https://projects.apache.org/
+  - counterpart: VP Legal Affairs
+    category: Policy & Compliance
+    nature: Legal and licensing questions, policy and regulatory topics
+    url: https://www.apache.org/legal/
+  - counterpart: VP Brand Management
+    category: Policy & Compliance
+    nature: Trademark and naming questions raised by external parties
+    url: https://www.apache.org/foundation/marks/
+  - counterpart: VP Fundraising
+    category: External Relations
+    nature: Hand-off for sponsorship and donation discussions
+    url: https://www.apache.org/foundation/sponsorship
+  - counterpart: Security Team
+    category: Policy & Compliance
+    nature: Supply-chain, vulnerability, and regulatory security topics
+    url: https://www.apache.org/security/
+  - counterpart: VP Marketing & Publicity
+    category: External Relations
+    nature: Public communication, announcements, and press
+    url: https://www.apache.org/press/
+  - counterpart: VP Conferences
+    category: External Relations
+    nature: Joint events and ecosystem visibility
+    url: https://events.apache.org/
+  - counterpart: VP Infrastructure
+    category: Operations
+    nature: Onboarding needs of incoming projects
+    url: https://infra.apache.org/
+
+reporting:
+  - >
+    The VP OSPO reports to the President and contributes to the President's
+    report to the Board.
+  - >
+    Reports cover: notable external engagements, prospective projects
+    introduced to the ASF, cross-foundation initiatives, public sector
+    engagements, and requests from PMCs.
+  - >
+    The role is appointed according to the ASF's usual process for officers,
+    and is reviewed periodically like other officer positions.
+
+measures_of_success:
+  - title: Clear, consistent entry point
+    description: >
+      External organizations know how to reach the ASF and receive a timely,
+      consistent response.
+  - title: Better-prepared incoming projects
+    description: >
+      Prospective projects reach the ASF better prepared and with a clearer
+      understanding of the Apache Way.
+  - title: Valuable PMC introductions
+    description: >
+      PMCs report useful introductions and new contributors or adopters
+      resulting from OSPO activity.
+  - title: Constructive public & cross-foundation voice
+    description: >
+      The ASF is a recognized and constructive participant in public sector and
+      cross-foundation discussions about open source.
+  - title: Trusted vendor neutrality
+    description: >
+      No complaints of preferential treatment or vendor bias.
+
+new_project_steps:
+  - step: "01"
+    title: Explore & Assess Fit
+    description: >
+      Start a conversation with the OSPO as a visible entry point. Learn what
+      the ASF offers and expects under the Apache Way, and assess whether the
+      ASF is the right home for your project and community.
+  - step: "02"
+    title: Connect with Incubator & PMCs
+    description: >
+      Get connected with the Apache Incubator PMC—the main partner for
+      prospective projects—as well as relevant existing Apache PMCs to explore
+      mentorship, alignment, and community readiness.
+  - step: "03"
+    title: Coordinate Onboarding Teams
+    description: >
+      Navigate onboarding smoothly through coordinated introductions to Legal
+      Affairs, Brand Management, Infrastructure, and Security so expectations
+      on licensing, trademarks, tooling, and security are clear early.
+  - step: "04"
+    title: Independent Governance Decision
+    description: >
+      Project acceptance follows established ASF governance processes. The
+      decision to accept a project remains entirely with the Board—the VP OSPO
+      facilitates and recommends, and never decides or votes by virtue of the
+      role.
+
+pmc_ecosystem_items:
+  - title: New contributors, adopters & collaborators
+    description: >
+      Help PMCs that ask for it to connect with companies, public institutions,
+      and research organizations interested in contributing to or adopting
+      their project.
+  - title: Cross-project & cross-foundation integrations
+    description: >
+      Highlight integration opportunities between Apache projects, as well as
+      between Apache projects and projects hosted in other open source
+      foundations.
+  - title: Real-world adoption feedback
+    description: >
+      Share adoption stories, needs, and feedback from external organizations
+      directly with the relevant PMCs—while always respecting PMC autonomy.
+  - title: Joint visibility & events
+    description: >
+      Work alongside Marketing & Publicity and Conferences to highlight Apache
+      projects and their ecosystems across announcements and events.
+  - title: Contributor & employer diversity
+    description: >
+      Encourage broad diversity of contributors and employers within project
+      communities, strengthening long-term community health and resilience.
+
+routing_topics:
+  - id: corporate-ospo
+    label: Corporate OSPO & Participation
+    badge: Start with VP OSPO
+    owner: VP OSPO (routing to relevant PMCs & Officers)
+    summary: >
+      Ideal first stop for companies wanting to understand how to participate
+      under the Apache Way—contributing as individuals, merit-based governance,
+      CLAs/CCLAs, upstream-first practices, and long-term sustainability.
+    what_happens: >
+      VP OSPO explains ASF participation norms and introduces you to the right
+      PMCs or Foundation officers without acting on their behalf.
+    action_label: Review Vendors & Companies Guide
+    action_url: /engage/#vendors-companies
+    external: false
+
+  - id: bring-project
+    label: Bring a Project to The ASF
+    badge: Start with VP OSPO
+    owner: VP OSPO → Apache Incubator PMC & Board
+    summary: >
+      Considering donating or moving an open source project to The ASF? Start
+      here to understand what the Foundation offers and expects before formal
+      incubation proposals.
+    what_happens: >
+      VP OSPO helps assess fit, connects you with the Apache Incubator PMC and
+      relevant PMCs, and coordinates onboarding teams (Legal, Brand, Infra,
+      Security). Acceptance decisions remain solely with the Board.
+    action_label: Explore Project Onboarding
+    action_url: /projects/#bringing-a-project
+    external: false
+
+  - id: public-sector
+    label: Public Sector, Regulation & Policy
+    badge: Start with VP OSPO
+    owner: VP OSPO (coordinating Public Affairs, Legal, Security, Privacy, President & Board)
+    summary: >
+      For governments, public administrations, regulators, and public research
+      institutions engaging on cybersecurity regulation, procurement, digital
+      sovereignty, or public-sector open source adoption.
+    what_happens: >
+      VP OSPO acts as liaison and coordinates with the relevant ASF officers so
+      the Foundation speaks with one consistent voice.
+    action_label: Read Public Sector Engagement
+    action_url: /engage/#public-sector
+    external: false
+
+  - id: peer-foundations
+    label: Cross-Foundation Collaboration
+    badge: Start with VP OSPO
+    owner: VP OSPO & Peer Foundation Liaisons
+    summary: >
+      For peer open source foundations and community organizations exploring
+      shared standards, tooling, project interoperability, joint events, or
+      common policy positions.
+    what_happens: >
+      VP OSPO maintains ongoing relationships across foundations and helps
+      navigate questions where projects span or depend on multiple foundations.
+    action_label: Peer Foundation Collaboration
+    action_url: /engage/#peer-foundations
+    external: false
+
+  - id: pmc-ecosystem
+    label: Apache PMC Ecosystem Support
+    badge: Opt-in for PMCs
+    owner: VP OSPO (strictly on PMC request or agreement)
+    summary: >
+      For Apache PMCs seeking introductions to potential contributors,
+      adopters, public institutions, research groups, or cross-foundation
+      integration partners.
+    what_happens: >
+      PMCs retain full autonomy over technical and community decisions. VP OSPO
+      facilitates introductions and works with Marketing & Publicity and
+      Conferences when requested.
+    action_label: PMC Ecosystem Support
+    action_url: /projects/#expanding-ecosystems
+    external: false
+
+  - id: sponsorship
+    label: Corporate Sponsorship & Donations
+    badge: Direct to VP Fundraising
+    owner: VP Fundraising
+    summary: >
+      Want to sponsor The Apache Software Foundation or make a financial
+      donation to support ASF infrastructure and operations?
+    what_happens: >
+      The VP OSPO is not a replacement for Fundraising. Sponsorship and
+      donation conversations are handled directly by VP Fundraising, and
+      sponsorship never confers preferential access to projects.
+    action_label: Visit ASF Sponsorship
+    action_url: https://www.apache.org/foundation/sponsorship
+    external: true
+
+  - id: security
+    label: Security Vulnerability Report
+    badge: Direct to Security Team
+    owner: ASF Security Team
+    summary: >
+      Reporting a security vulnerability in an Apache project? Always follow
+      the official ASF coordinated vulnerability disclosure process directly.
+    what_happens: >
+      The ASF Security Team owns vulnerability handling directly. VP OSPO
+      coordinates with the Security Team only on broader external supply-chain
+      and regulatory security topics.
+    action_label: Report a Vulnerability
+    action_url: https://www.apache.org/security/
+    external: true
+
+  - id: legal-brand
+    label: Legal, Licensing & Trademarks
+    badge: Direct to Legal / Brand
+    owner: VP Legal Affairs & VP Brand Management
+    summary: >
+      Specific legal, licensing, CLA/CCLA, or Apache trademark and naming
+      inquiries are governed by the Foundation's dedicated officers.
+    what_happens: >
+      VP Legal Affairs owns legal and licensing matters; VP Brand Management
+      owns trademark and naming questions. VP OSPO routes external questions to
+      them rather than duplicating their authority.
+    action_label: ASF Legal & Trademark Policies
+    action_url: https://www.apache.org/legal/
+    external: true
+
+  - id: press-events
+    label: Press, Media & Joint Events
+    badge: Direct to Marketing / Conferences
+    owner: VP Marketing & Publicity / VP Conferences
+    summary: >
+      Media inquiries, official announcements, press requests, and Community
+      Over Code or joint event inquiries.
+    what_happens: >
+      VP Marketing & Publicity owns public communications and press; VP
+      Conferences owns ASF events. VP OSPO partners with both on ecosystem
+      visibility and joint initiatives.
+    action_label: ASF Newsroom & Press
+    action_url: https://www.apache.org/press/
+    external: true
+
+channels:
+  - name: Public Discussion Mailing List
+    identifier: discuss@ospo.apache.org
+    mailto: discuss@ospo.apache.org
+    status: Active
+    visibility: Public & Archived
+    description: >
+      A public mailing list for general OSPO discussions (discuss@ospo.apache.org),
+      open to the entire Apache community in keeping with the Apache Way.
+  - name: Direct Contact
+    identifier: contact@ospo.apache.org
+    mailto: contact@ospo.apache.org
+    status: Active
+    visibility: Direct & Confidential
+    description: >
+      Direct contact address for external organizations and confidential
+      matters—such as early-stage organizational conversations or sensitive
+      policy matters—with outcomes reported publicly whenever appropriate.
+  - name: OSPO Portal
+    identifier: ospo.apache.org
+    url: https://ospo.apache.org/
+    status: Active
+    visibility: Public Web Resource
+    description: >
+      This site (with a direct link from www.apache.org) describing the VP OSPO
+      role, guiding principles, how external organizations can contact the OSPO,
+      and what to expect.

@@ -1,0 +1,78 @@
+{{- $topics := hugo.Data.ospo.routing_topics -}}
+<div class="router" data-router>
+  <div class="router__header">
+    <div>
+      <p class="eyebrow">Routing Directory</p>
+      <h2 class="section-title">Who should I talk to at The ASF?</h2>
+      <p class="section-lead">
+        The VP OSPO acts as a connector—routing external interest to the right people inside the Foundation without duplicating existing officers' responsibilities. Select a topic to see the right starting point.
+      </p>
+    </div>
+  </div>
+
+  <div class="router__layout">
+    <div class="router__tabs" role="tablist" aria-label="Select your engagement topic">
+      {{- range $idx, $topic := $topics }}
+      <button
+        type="button"
+        role="tab"
+        id="tab-{{ $topic.id }}"
+        aria-selected="{{ if eq $idx 0 }}true{{ else }}false{{ end }}"
+        aria-controls="panel-{{ $topic.id }}"
+        class="router__tab{{ if eq $idx 0 }} is-active{{ end }}"
+        data-router-tab="{{ $topic.id }}"
+      >
+        <span class="router__tab-label">{{ $topic.label }}</span>
+        <span class="router__tab-badge {{ if hasPrefix $topic.badge "Direct" }}is-direct{{ else if hasPrefix $topic.badge "Opt-in" }}is-optin{{ else }}is-ospo{{ end }}">{{ $topic.badge }}</span>
+      </button>
+      {{- end }}
+    </div>
+
+    <div class="router__panels">
+      {{- range $idx, $topic := $topics }}
+      <div
+        role="tabpanel"
+        id="panel-{{ $topic.id }}"
+        aria-labelledby="tab-{{ $topic.id }}"
+        class="router__panel{{ if eq $idx 0 }} is-active{{ end }}"
+        data-router-panel="{{ $topic.id }}"
+        {{ if ne $idx 0 }}hidden{{ end }}
+      >
+        <div class="router__panel-top">
+          <span class="badge {{ if hasPrefix $topic.badge "Direct" }}badge--navy{{ else if hasPrefix $topic.badge "Opt-in" }}badge--amber{{ else }}badge--purple{{ end }}">
+            {{ $topic.badge }}
+          </span>
+          <h3 class="router__panel-title">{{ $topic.label }}</h3>
+        </div>
+
+        <dl class="router__meta">
+          <dt>Responsible Point of Contact</dt>
+          <dd>{{ $topic.owner }}</dd>
+        </dl>
+
+        <p class="router__summary">{{ $topic.summary }}</p>
+
+        <div class="router__expect">
+          <h4>What happens next</h4>
+          <p>{{ $topic.what_happens }}</p>
+        </div>
+
+        <div class="router__actions">
+          {{- if $topic.external }}
+            <a href="{{ $topic.action_url }}" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              {{ $topic.action_label }}
+              <span aria-hidden="true">&nearr;</span>
+            </a>
+          {{- else }}
+            <a href="{{ $topic.action_url | relURL }}" class="btn btn--primary">
+              {{ $topic.action_label }}
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          {{- end }}
+          <a href="{{ "contact/" | relURL }}" class="btn btn--ghost">Communication Channels</a>
+        </div>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</div>

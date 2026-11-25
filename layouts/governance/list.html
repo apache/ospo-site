@@ -1,0 +1,114 @@
+{{ define "main" }}
+{{- $d := hugo.Data.ospo -}}
+{{- partial "page-hero.html" . -}}
+
+<section class="section" id="principles">
+  <div class="container">
+    <p class="eyebrow">Guiding principles</p>
+    <h2 class="section-title">How the VP OSPO operates</h2>
+    <div class="principle-list">
+      {{- range $d.principles }}
+      <article class="principle principle--full">
+        <span class="principle__num">{{ .number }}</span>
+        <div>
+          <h3 class="principle__title">{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="what-the-role-is-not">
+  <div class="container">
+    <p class="eyebrow">Clear boundaries</p>
+    <h2 class="section-title">What the role is not</h2>
+    <div class="card-grid card-grid--4">
+      {{- range $d.what_role_is_not }}
+      <article class="card card--not">
+        <span class="card__icon" aria-hidden="true">&times;</span>
+        <h3 class="card__title">{{ .title }}</h3>
+        <p class="card__text">{{ .description }}</p>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="working-relationships">
+  <div class="container">
+    <p class="eyebrow">Inside the Foundation</p>
+    <h2 class="section-title">Working relationships</h2>
+    <p class="section-lead">Facilitate, don't duplicate: existing officers and committees keep their responsibilities. The VP OSPO routes and coordinates.</p>
+
+    <div class="filter" role="group" aria-label="Filter relationships by category" data-filter>
+      <button type="button" class="filter__btn is-active" data-filter-value="all" aria-pressed="true">All</button>
+      {{- $cats := slice -}}
+      {{- range $d.relationships }}{{ $cats = $cats | append .category }}{{ end -}}
+      {{- range uniq $cats }}
+      <button type="button" class="filter__btn" data-filter-value="{{ . | urlize }}" aria-pressed="false">{{ . }}</button>
+      {{- end }}
+    </div>
+
+    <div class="table-wrap">
+      <table class="rel-table">
+        <thead>
+          <tr>
+            <th scope="col">Counterpart</th>
+            <th scope="col">Category</th>
+            <th scope="col">Nature of the relationship</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{- range $d.relationships }}
+          <tr data-category="{{ .category | urlize }}">
+            <th scope="row"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .counterpart }}</a></th>
+            <td><span class="tag">{{ .category }}</span></td>
+            <td>{{ .nature }}</td>
+          </tr>
+          {{- end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="reporting">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Accountability</p>
+      <h2 class="section-title">Reporting &amp; accountability</h2>
+      <ul class="checklist checklist--lg">
+        {{- range $d.reporting }}
+        <li>{{ . }}</li>
+        {{- end }}
+      </ul>
+    </div>
+    <div class="org" aria-label="Reporting line">
+      <div class="org__node org__node--top">Board of Directors</div>
+      <div class="org__line" aria-hidden="true"></div>
+      <div class="org__node">President</div>
+      <div class="org__line" aria-hidden="true"></div>
+      <div class="org__node org__node--active">VP OSPO</div>
+      <p class="org__caption">The VP OSPO reports to the President as an operational officer and contributes to the President's report to the Board.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="measures-of-success">
+  <div class="container">
+    <p class="eyebrow">Outcomes</p>
+    <h2 class="section-title">Measures of success</h2>
+    <div class="card-grid card-grid--3">
+      {{- range $i, $m := $d.measures_of_success }}
+      <article class="card card--metric">
+        <span class="card__index">{{ add $i 1 }}</span>
+        <h3 class="card__title">{{ $m.title }}</h3>
+        <p class="card__text">{{ $m.description }}</p>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{ end }}

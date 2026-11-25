@@ -1,0 +1,59 @@
+{{ define "main" }}
+{{- $d := hugo.Data.ospo -}}
+{{- partial "page-hero.html" . -}}
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Communication channels</p>
+    <h2 class="section-title">How to reach the OSPO</h2>
+    <p class="section-lead">Consistent with the Apache Way, discussions are held on public mailing lists whenever possible. Private channels are used only when confidentiality is genuinely required.</p>
+    <div class="card-grid card-grid--3">
+      {{- range $d.channels }}
+      <article class="card channel">
+        <div class="channel__top">
+          <span class="badge badge--purple">{{ .status }}</span>
+          <span class="channel__vis">{{ .visibility }}</span>
+        </div>
+        <h3 class="card__title">{{ .name }}</h3>
+        <p class="channel__id">
+          {{- if .mailto -}}
+          <a href="mailto:{{ .mailto }}"><code>{{ .identifier }}</code></a>
+          {{- else if .url -}}
+          <a href="{{ .url }}"><code>{{ .identifier }}</code></a>
+          {{- else -}}
+          <code>{{ .identifier }}</code>
+          {{- end -}}
+        </p>
+        <p class="card__text">{{ .description }}</p>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">What to expect</p>
+      <h2 class="section-title">When you reach out</h2>
+      <ul class="checklist checklist--lg">
+        <li>A timely, consistent response from a single point of contact.</li>
+        <li>Introductions to the right PMCs and officers—never commitments made on their behalf.</li>
+        <li>Equal treatment regardless of organization size, sponsorship level, or commercial relationships.</li>
+        <li>Public discussion by default; outcomes of confidential discussions shared publicly once appropriate.</li>
+      </ul>
+    </div>
+    <aside class="callout">
+      <h3 class="callout__title">Looking for something specific?</h3>
+      <ul class="link-list">
+        <li><a href="https://www.apache.org/security/" target="_blank" rel="noopener noreferrer">Report a security vulnerability &nearr;</a></li>
+        <li><a href="https://www.apache.org/foundation/sponsorship" target="_blank" rel="noopener noreferrer">Sponsor the ASF &nearr;</a></li>
+        <li><a href="https://www.apache.org/foundation/marks/" target="_blank" rel="noopener noreferrer">Trademarks &amp; brand questions &nearr;</a></li>
+        <li><a href="https://www.apache.org/legal/" target="_blank" rel="noopener noreferrer">Legal &amp; licensing &nearr;</a></li>
+        <li><a href="https://www.apache.org/press/" target="_blank" rel="noopener noreferrer">Press &amp; media &nearr;</a></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+{{ end }}

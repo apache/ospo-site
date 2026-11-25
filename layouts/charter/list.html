@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{- $d := hugo.Data.ospo -}}
+{{- partial "page-hero.html" . -}}
+
+<section class="section">
+  <div class="container doc-layout">
+    <aside class="doc-toc" aria-label="Table of contents">
+      <div class="doc-toc__inner">
+        <p class="doc-toc__title">On this page</p>
+        {{ .TableOfContents }}
+        <div class="doc-meta">
+          <p class="doc-meta__label">Contact</p>
+          <p><a href="mailto:{{ .Site.Params.contactEmail }}" class="text-link">{{ .Site.Params.contactEmail }}</a></p>
+          <p class="doc-meta__label">Discussion List</p>
+          <p><a href="mailto:{{ .Site.Params.discussList }}" class="text-link">{{ .Site.Params.discussList }}</a></p>
+        </div>
+      </div>
+    </aside>
+    <article class="prose" data-prose>
+      {{ .Content }}
+    </article>
+  </div>
+</section>
+{{ end }}

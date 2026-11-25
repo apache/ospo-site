@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body class="{{ if .IsHome }}is-home{{ else }}is-subpage{{ end }}">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  {{- partial "header.html" . -}}
+  <main id="main-content" tabindex="-1">
+    {{- block "main" . }}{{- end }}
+  </main>
+  {{- partial "footer.html" . -}}
+</body>
+</html>

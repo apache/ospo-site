@@ -1,0 +1,42 @@
+<div class="asf-ribbon" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a href="{{ "/" | relURL }}" class="brand" aria-label="The Apache Software Foundation — Open Source Program Office Home">
+      <img src="{{ "images/asflogo_horizontal_color.svg" | relURL }}" alt="The Apache Software Foundation" class="brand__logo" width="118" height="62">
+      <span class="brand__divider" aria-hidden="true"></span>
+      <span class="brand__unit">
+        <span class="brand__unit-abbr">OSPO</span>
+        <span class="brand__unit-name">Open Source Program Office</span>
+      </span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="Toggle navigation menu"
+    >
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+      <ul class="primary-nav__list">
+        {{- $current := .RelPermalink -}}
+        {{- range .Site.Menus.main }}
+          {{- $itemURL := .URL | relURL -}}
+          {{- $isActive := or (eq $current $itemURL) (and (ne .URL "/") (hasPrefix $current $itemURL)) -}}
+          <li class="primary-nav__item">
+            <a
+              href="{{ $itemURL }}"
+              class="primary-nav__link{{ if $isActive }} is-active{{ end }}{{ if eq .URL "/contact/" }} primary-nav__link--cta{{ end }}"
+              {{ if $isActive }}aria-current="page"{{ end }}
+            >{{ .Name }}</a>
+          </li>
+        {{- end }}
+      </ul>
+    </nav>
+  </div>
+</header>

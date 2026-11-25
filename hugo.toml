@@ -1,0 +1,53 @@
+baseURL = "https://ospo.apache.org/"
+locale = "en-US"
+title = "Apache OSPO — Open Source Program Office | The Apache Software Foundation"
+enableRobotsTXT = true
+enableEmoji = false
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+  siteName = "Open Source Program Office"
+  shortName = "ASF OSPO"
+  organization = "The Apache Software Foundation"
+  description = "Making it easy for the world to engage with The Apache Software Foundation, and helping Apache projects and communities thrive through those relationships."
+  contactEmail = "contact@ospo.apache.org"
+  discussList = "discuss@ospo.apache.org"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
+[[menus.main]]
+  name = "Overview"
+  url = "/"
+  weight = 10
+
+[[menus.main]]
+  name = "Engage"
+  url = "/engage/"
+  weight = 20
+
+[[menus.main]]
+  name = "Projects & Ecosystems"
+  url = "/projects/"
+  weight = 30
+
+[[menus.main]]
+  name = "Governance"
+  url = "/governance/"
+  weight = 40
+
+[[menus.main]]
+  name = "Charter"
+  url = "/charter/"
+  weight = 50
+
+[[menus.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 60

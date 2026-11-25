@@ -1,0 +1,60 @@
+{{ define "main" }}
+{{- $d := hugo.Data.ospo -}}
+{{- partial "page-hero.html" . -}}
+
+<section class="section">
+  <div class="container">
+    <nav class="pill-nav" aria-label="Jump to audience">
+      {{- range first 3 $d.audiences }}
+      <a href="#{{ .id }}" class="pill-nav__link">{{ .title }}</a>
+      {{- end }}
+      <a href="#norms-standards" class="pill-nav__link">Norms &amp; Standards</a>
+      <a href="#routing" class="pill-nav__link">Routing Directory</a>
+    </nav>
+
+    <div class="stack">
+      {{- range first 3 $d.audiences }}
+      <article class="audience accent-{{ .accent }}" id="{{ .id }}">
+        <header class="audience__header">
+          <p class="eyebrow">{{ .eyebrow }}</p>
+          <h2 class="audience__title">{{ .title }}</h2>
+          <p class="audience__tagline">{{ .tagline }}</p>
+        </header>
+        <ul class="checklist checklist--lg">
+          {{- range .bullets }}
+          <li>{{ . }}</li>
+          {{- end }}
+        </ul>
+      </article>
+      {{- end }}
+
+      <article class="audience accent-navy" id="norms-standards">
+        <header class="audience__header">
+          <p class="eyebrow">Standards &amp; Legal</p>
+          <h2 class="audience__title">Norms, Standards &amp; Legal Discussions</h2>
+          <p class="audience__tagline">Participation alongside other ASF Vice Presidents.</p>
+        </header>
+        <ul class="checklist checklist--lg">
+          <li>The VP OSPO is involved, together with other ASF Vice Presidents, in norms, standards, and legal discussions that affect the Foundation and its communities.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="routing">
+  <div class="container">
+    {{- partial "router.html" . -}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="notice">
+      <h2 class="notice__title">Important: what the OSPO does <em>not</em> do</h2>
+      <p>The OSPO does not act on behalf of companies, does not provide preferential access to projects, roadmaps, or decision-makers, and does not replace VP Fundraising for sponsorship conversations. All organizations are treated equally, regardless of size or sponsorship level.</p>
+      <a href="{{ "governance/#what-the-role-is-not" | relURL }}" class="text-link">See the role's boundaries <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+{{ end }}

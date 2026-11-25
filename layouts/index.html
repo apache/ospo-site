@@ -1,0 +1,125 @@
+{{ define "main" }}
+{{- $d := hugo.Data.ospo -}}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow eyebrow--light">The Apache Software Foundation</p>
+      <h1 class="hero__title">{{ .Title }}</h1>
+      <p class="hero__subtitle">{{ .Params.subtitle }}</p>
+      <div class="hero__actions">
+        <a href="{{ "engage/" | relURL }}" class="btn btn--light">Engage with The ASF <span aria-hidden="true">&rarr;</span></a>
+        <a href="{{ "charter/" | relURL }}" class="btn btn--outline-light">Read the charter</a>
+      </div>
+    </div>
+    <div class="hero__art" aria-hidden="true">
+      <img src="{{ "images/oakleaf.svg" | relURL }}" alt="" width="260" height="400">
+    </div>
+  </div>
+</section>
+
+<section class="section section--mission">
+  <div class="container">
+    <figure class="mission">
+      <p class="eyebrow">Our Mission</p>
+      <blockquote class="mission__quote">{{ $d.mission }}</blockquote>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">What is the VP OSPO?</p>
+      <h2 class="section-title">A connector, facilitator, and liaison</h2>
+      <p class="section-lead">{{ $d.summary.lead }}</p>
+      <p>{{ $d.summary.connector }}</p>
+    </div>
+    <aside class="callout">
+      <h3 class="callout__title">The role at a glance</h3>
+      <ul class="checklist">
+        <li>Single, well-known entry point to the Foundation</li>
+        <li>Routes external interest to the right PMCs and officers</li>
+        <li>Helps prospective projects find their way to the ASF</li>
+        <li>Supports PMCs that ask for help growing their ecosystems</li>
+        <li>Never takes decisions away from the bodies that own them</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container">
+    <p class="eyebrow">Who we work with</p>
+    <h2 class="section-title">One door for many kinds of organizations</h2>
+    <p class="section-lead">The ASF hosts hundreds of projects relied upon by companies and governments worldwide. The VP OSPO provides a consistent counterpart for each of them.</p>
+    <div class="card-grid card-grid--4">
+      {{- range $d.audiences }}
+      <a class="card card--link accent-{{ .accent }}" href="{{ .href | relURL }}">
+        <p class="card__eyebrow">{{ .eyebrow }}</p>
+        <h3 class="card__title">{{ .title }}</h3>
+        <p class="card__text">{{ .tagline }}</p>
+        <span class="card__more">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Why an OSPO?</p>
+    <h2 class="section-title">Background &amp; rationale</h2>
+    <div class="split split--wide">
+      <div>
+        <p class="section-lead">The number of organizations that want to engage with the Foundation keeps growing, and so does the variety of reasons for engaging.</p>
+        <p>Today these conversations reach the Foundation through many different doors—individual committers, PMCs, officers, board members—which makes it hard for external parties to know whom to talk to, and hard for the Foundation to respond consistently.</p>
+        <p><strong>The VP OSPO provides a single, well-known entry point, while preserving the ASF's decentralized, community-led model.</strong></p>
+      </div>
+      <ul class="driver-list">
+        {{- range $d.rationale_drivers }}
+        <li class="driver accent-{{ .accent }}">
+          <h3 class="driver__title">{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container">
+    {{- partial "router.html" . -}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Guiding principles</p>
+    <h2 class="section-title">Rooted in the Apache Way</h2>
+    <div class="card-grid card-grid--5">
+      {{- range $d.principles }}
+      <article class="principle">
+        <span class="principle__num">{{ .number }}</span>
+        <h3 class="principle__title">{{ .title }}</h3>
+      </article>
+      {{- end }}
+    </div>
+    <p class="section-more"><a href="{{ "governance/" | relURL }}" class="text-link">Read the full principles and governance <span aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
+
+<section class="section section--cta">
+  <div class="container cta">
+    <div>
+      <h2 class="cta__title">OSPO Charter</h2>
+      <p class="cta__text">Feedback welcome.</p>
+    </div>
+    <div class="cta__actions">
+      <a href="{{ "contact/" | relURL }}" class="btn btn--light">Contact the OSPO</a>
+      <a href="{{ "charter/" | relURL }}" class="btn btn--outline-light">Full charter</a>
+    </div>
+  </div>
+</section>
+{{ end }}

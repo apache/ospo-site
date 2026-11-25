@@ -1,0 +1,58 @@
+<footer class="site-footer">
+  <div class="asf-ribbon" aria-hidden="true"></div>
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <a href="https://www.apache.org/" target="_blank" rel="noopener noreferrer" aria-label="The Apache Software Foundation">
+        <img src="{{ "images/asf_logo_full_horizontal_white.svg" | relURL }}" alt="The Apache Software Foundation" class="site-footer__logo" width="240" height="71">
+      </a>
+      <p class="site-footer__tagline">
+        The Open Source Program Office (OSPO) makes it easy for organizations worldwide to engage with The Apache Software Foundation in a manner consistent with the Apache Way and vendor neutrality.
+      </p>
+    </div>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__heading">OSPO Portal</h2>
+      <ul class="site-footer__list">
+        {{- range .Site.Menus.main }}
+          <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__heading">The ASF</h2>
+      <ul class="site-footer__list">
+        <li><a href="https://www.apache.org/theapacheway/" target="_blank" rel="noopener noreferrer">The Apache Way</a></li>
+        <li><a href="https://www.apache.org/foundation/how-it-works" target="_blank" rel="noopener noreferrer">How the ASF Works</a></li>
+        <li><a href="https://incubator.apache.org/" target="_blank" rel="noopener noreferrer">Apache Incubator</a></li>
+        <li><a href="https://projects.apache.org/" target="_blank" rel="noopener noreferrer">Projects Directory</a></li>
+        <li><a href="https://community.apache.org/" target="_blank" rel="noopener noreferrer">Community Development</a></li>
+        <li><a href="https://events.apache.org/" target="_blank" rel="noopener noreferrer">Events &amp; Community Over Code</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__heading">Policies &amp; Support</h2>
+      <ul class="site-footer__list">
+        <li><a href="https://www.apache.org/licenses/" target="_blank" rel="noopener noreferrer">Apache License 2.0</a></li>
+        <li><a href="https://www.apache.org/security/" target="_blank" rel="noopener noreferrer">Security</a></li>
+        <li><a href="https://www.apache.org/foundation/sponsorship" target="_blank" rel="noopener noreferrer">Sponsorship</a></li>
+        <li><a href="https://www.apache.org/foundation/thanks" target="_blank" rel="noopener noreferrer">Thanks</a></li>
+        <li><a href="https://www.apache.org/foundation/policies/conduct" target="_blank" rel="noopener noreferrer">Code of Conduct</a></li>
+        <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__legal">
+    <div class="container site-footer__legal-inner">
+      <p>
+        Copyright &copy; {{ now.Format "2006" }} The Apache Software Foundation, Licensed under the
+        <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">Apache License, Version 2.0</a>.
+      </p>
+      <p>
+        Apache and the Apache logo are trademarks of The Apache Software Foundation.
+      </p>
+    </div>
+  </div>
+</footer>
