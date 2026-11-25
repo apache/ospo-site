@@ -13,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Build ASF OSPO Website
+name: Build and Deploy ASF OSPO Website
 
 on:
   push:
     branches:
       - main
+      - "preview/*"
   pull_request:
     branches:
       - main
@@ -42,11 +43,73 @@ jobs:
           extended: true
 
       - name: Build static site
-        run: hugo --minify --gc
+        run: |
+          hugo --minify --gc
+          cp .asf.yaml public/.asf.yaml
 
       - name: Upload built site artifact
         uses: actions/upload-artifact@v4
         with:
           name: ospo-site
           path: public/
+          include-hidden-files: true
           retention-days: 7
+
+  deploy:
+    name: Deploy to ASF Branch
+    needs: build
+    if: >-
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/preview/'))
+    permissions:
+      contents: write
+    concurrency:
+      group: deploy-${{ github.ref == 'refs/heads/main' && 'asf-site' || 'asf-staging' }}
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download built site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ospo-site
+          path: _site
+
+      - name: Publish to target branch
+        env:
+          TARGET_BRANCH: ${{ github.ref == 'refs/heads/main' && 'asf-site' || 'asf-staging' }}
+        run: |
+          set -euo pipefail
+
+          # Ensure .asf.yaml from the source ref is included at the root of the published branch.
+          cp .asf.yaml _site/.asf.yaml
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git ls-remote --exit-code --heads origin "${TARGET_BRANCH}" >/dev/null 2>&1; then
+            git fetch origin "${TARGET_BRANCH}"
+            git checkout -B "${TARGET_BRANCH}" "origin/${TARGET_BRANCH}"
+          else
+            git checkout --orphan "${TARGET_BRANCH}"
+          fi
+
+          git rm -rf --ignore-unmatch . >/dev/null 2>&1 || true
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '_site' -exec rm -rf {} +
+
+          cp -a _site/. .
+          rm -rf _site
+          test -f .asf.yaml
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to publish to ${TARGET_BRANCH}."
+            exit 0
+          fi
+
+          git commit -m "Deploy site from ${GITHUB_SHA}"
+          git push origin "${TARGET_BRANCH}"
